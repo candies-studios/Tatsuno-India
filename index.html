@@ -27,36 +27,37 @@ a{color:inherit}
 .site-header{position:fixed;inset:0 0 auto 0;z-index:50;background:#fff;transition:transform .35s ease,box-shadow .3s}
 .site-header.solid{transform:translateY(-44px);box-shadow:0 2px 14px rgba(0,0,0,.08)}
 .topbar{background:#f5f5f5;border-top:2px solid #d9d9d9;height:44px}
-.topbar .wrap{display:flex;justify-content:flex-end;align-items:center;height:100%;gap:0}
-.topbar a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#1d1d1d;font-size:1rem;font-weight:400;padding:0 20px}
+.topbar .wrap{display:flex;justify-content:flex-end;align-items:center;height:100%;gap:0;max-width:none;padding:0 8.5vw 0 2.3vw}
+.topbar a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#1d1d1d;font-size:clamp(13px,1.2vw,22px);font-weight:400;padding:0 1.6vw}
 .topbar a:hover{color:var(--red)}
 .topbar a+a{border-left:1px solid #cfcfcf}
-.topbar svg{width:22px;height:22px;flex:none}
+.topbar svg{width:1.3em;height:1.3em;flex:none}
 .mainbar{height:var(--hdr);border-bottom:1px solid #e6e1d8}
-.mainbar .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:20px;max-width:1760px;padding:0 clamp(16px,2.6vw,48px)}
-.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#1d1d1d;font-family:Arial,"Helvetica Neue",sans-serif;font-weight:700;font-size:1.32rem;letter-spacing:-.02em;white-space:nowrap}
-.brand svg{width:30px;height:36px;flex:none}
-.menu{display:flex;align-items:center;gap:clamp(16px,1.9vw,40px);list-style:none}
-.menu a{text-decoration:none;color:#1d1d1d;font-size:clamp(1rem,1.1vw,1.15rem);font-weight:500;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:color .2s}
+.mainbar .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px;max-width:none;padding:0 2.3vw}
+.navgroup{display:flex;align-items:center;gap:2vw}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#1d1d1d;font-family:Arial,"Helvetica Neue",sans-serif;font-weight:700;font-size:clamp(13px,1.2vw,22px);letter-spacing:-.03em;white-space:nowrap}
+.brand svg{width:clamp(16px,1.5vw,28px);height:auto;aspect-ratio:30/36;flex:none}
+.menu{display:flex;align-items:center;gap:2vw;list-style:none}
+.menu a{text-decoration:none;color:#1d1d1d;font-size:clamp(13px,1.15vw,21px);font-weight:500;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:color .2s}
 .menu a:hover,.menu a.active{color:var(--orange)}
-.menu .caret{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:8px solid var(--red)}
-.contact-btn{background:var(--red);color:#fff;text-decoration:none;font-weight:600;font-size:1.08rem;letter-spacing:.01em;padding:0 clamp(24px,2.4vw,46px);height:64px;display:inline-flex;align-items:center;text-transform:uppercase;white-space:nowrap;flex:none;transition:background .2s}
+.menu .caret{width:0;height:0;border-left:.42em solid transparent;border-right:.42em solid transparent;border-top:.48em solid var(--red)}
+.contact-btn{background:var(--red);color:#fff;text-decoration:none;font-weight:600;font-size:clamp(13px,1.15vw,21px);letter-spacing:.01em;padding:0 2.3vw;height:clamp(40px,3.2vw,60px);display:inline-flex;align-items:center;text-transform:uppercase;white-space:nowrap;flex:none;transition:background .2s}
 .contact-btn:hover{background:#b71c1c}
 .wordmark{text-decoration:none;text-align:center;line-height:1;color:var(--red)}
-.wordmark b{display:block;font-size:2.2rem;font-weight:900;letter-spacing:-.01em}
-.wordmark small{display:block;color:#1d1d1d;font-size:.68rem;font-weight:500;margin-top:6px;white-space:nowrap}
+.wordmark b{display:block;font-size:clamp(20px,1.85vw,36px);font-weight:900;letter-spacing:-.01em}
+.wordmark small{display:block;color:#1d1d1d;font-size:clamp(7px,.6vw,12px);font-weight:500;margin-top:.45em;white-space:nowrap}
 .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
 .burger i{display:block;height:2px;background:#1d1d1d;margin:6px 8px}
 .wordmark{flex:none}
-@media (max-width:1380px){.mainbar .wordmark{display:none}}
-@media (max-width:1180px){
+@media (max-width:960px){
   .menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 18px;box-shadow:0 10px 20px rgba(0,0,0,.08)}
   .menu.open{display:flex}
   .menu li{width:100%;border-bottom:1px solid #eee}
   .menu a{padding:14px 0;width:100%}
   .burger{display:block}
   .mainbar{position:relative}
-  .contact-btn{margin-left:auto}
+  .navgroup{margin-left:auto}
+  .mainbar .wordmark{margin-left:auto}
 }
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:2px;transition:transform .2s,background .2s}
 .btn:hover{background:#b71c1c;transform:translateY(-2px)}
@@ -192,7 +193,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid #2b2f35;padding-top:22px;marg
 @media (max-width:900px){
   .contact-btn{display:none}
   .brand{font-size:.95rem;gap:8px}
-  .brand svg{width:22px;height:27px}
+  .brand svg{width:20px}
   .mainbar .wrap{gap:10px}
   .mainbar .wordmark b{font-size:1.4rem}
   .topbar a{font-size:.85rem;padding:0 12px}
@@ -244,6 +245,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid #2b2f35;padding-top:22px;marg
   <div class="mainbar">
     <div class="wrap">
       <a href="#top" class="brand"><svg viewBox="0 0 30 36" aria-hidden="true"><rect width="30" height="36" fill="#f15a24"/><path d="M15 4 L4 32 L13.2 32 L15 13 L16.8 32 L26 32 Z" fill="#fff"/></svg>TATSUNO INDIA PRIVATE LIMITED</a>
+      <div class="navgroup">
       <ul class="menu">
         <li><a href="#top" class="active">Home</a></li>
         <li><a href="#heritage">About Us</a></li>
@@ -253,6 +255,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid #2b2f35;padding-top:22px;marg
         <li><a href="https://www.tatsuno.co.in/">Careers</a></li>
       </ul>
       <a href="#contact" class="contact-btn">Contact Us</a>
+      </div>
       <a href="#top" class="wordmark" aria-label="Tatsuno"><b>T&Lambda;TSUNO</b><small>In Innovation, In Reliable Services</small></a>
       <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><i></i><i></i><i></i></button>
     </div>
