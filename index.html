@@ -52,8 +52,22 @@ a{color:inherit}
 .swirls .c{transform-origin:50% 50%;animation:spin 78s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 #prodWrap{position:absolute;left:50%;top:calc(50% + 50px);height:min(68vh,720px);aspect-ratio:747/1177;
-  translate:-50% -50%;will-change:transform;filter:drop-shadow(0 42px 46px rgba(0,0,0,.72))}
-#prod{width:100%;height:100%;display:block}
+  translate:-50% -50%;will-change:transform,opacity;perspective:2200px;perspective-origin:46.45% 40%;--u:1px}
+#spin{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:46.45% 50%;will-change:transform}
+.face{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:block}
+.f-front,.f-back{left:0;top:0;width:100%;height:100%;transform-origin:46.45% 50%}
+.f-front{transform:translateZ(calc(var(--u) * 132))}
+.f-back{transform:rotateY(180deg) translateZ(calc(var(--u) * 132))}
+.f-side{top:calc(var(--u) * 18);left:calc(var(--u) * 215);width:calc(var(--u) * 264);height:calc(var(--u) * 1158);
+  object-fit:fill;transform-origin:50% 50%}
+.f-right{transform:rotateY(90deg) translateZ(calc(var(--u) * 257))}
+.f-left{transform:rotateY(-90deg) translateZ(calc(var(--u) * 257))}
+.shade{position:absolute;top:calc(var(--u) * 18);left:calc(var(--u) * 215);width:calc(var(--u) * 264);height:calc(var(--u) * 1158);
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;pointer-events:none;background:#000;opacity:0}
+.s-right{transform:rotateY(90deg) translateZ(calc(var(--u) * 257.5))}
+.s-left{transform:rotateY(-90deg) translateZ(calc(var(--u) * 257.5))}
+.floor{position:absolute;left:8%;right:8%;bottom:-5%;height:9%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.75),rgba(0,0,0,0));filter:blur(6px)}
 #callouts{position:absolute;inset:0;opacity:0;transition:opacity .35s}
 #callouts svg{width:100%;height:100%;display:block;overflow:visible}
 #callouts text{font-family:"IBM Plex Mono",monospace;font-size:30px;letter-spacing:.11em;text-transform:uppercase;fill:var(--ink)}
@@ -262,7 +276,14 @@ footer .fine{max-width:1280px;margin:28px auto 0;padding-top:18px;border-top:1px
     </svg>
   </div>
   <div id="prodWrap">
-    <img id="prod" src="images/dispenser-cutout.webp" alt="" width="747" height="1177" decoding="async">
+    <div class="floor"></div>
+    <div id="spin">
+      <img class="face f-front" src="images/dispenser-cutout.webp" alt="" width="747" height="1177" decoding="async">
+      <img class="face f-back" src="images/dispenser-cutout.webp" alt="" width="747" height="1177" decoding="async">
+      <img class="face f-side f-right" src="images/side-panel-right.webp" alt="" decoding="async">
+      <img class="face f-side f-left" src="images/side-panel-left.webp" alt="" decoding="async">
+      <div class="shade s-right" id="shR"></div><div class="shade s-left" id="shL"></div>
+    </div>
     <div id="callouts">
       <svg viewBox="0 0 747 1177">
         <g stroke="var(--ember)" stroke-width="3" fill="none" opacity=".95">
@@ -548,18 +569,18 @@ footer .fine{max-width:1280px;margin:28px auto 0;padding-top:18px;border-top:1px
   addEventListener("resize", measure);
 
   /* ---------- choreography: one keyframe per chapter ----------
-     x/y in vw/vh, sc scale, rot degrees, tilt = rotateY, call = callout opacity,
+     x/y in vw/vh, sc scale, spin = rotateY in degrees (eased linearly), call = callout opacity,
      op = product opacity, atm = backdrop intensity */
   const KEYS = [
-    { at:0, x: 20, y: 0, sc:1.00, rot:-2, tilt: 10, call:0, op:1,   atm:1.00 }, // hero, panel left
-    { at:1, x: 30, y: 2, sc:0.80, rot: 0, tilt: 14, call:0, op:0.0, atm:0.70 }, // walk-around: carousel takes over
-    { at:2, x:-12, y: 0, sc:1.04, rot: 0, tilt:  0, call:1, op:1,   atm:0.55 }, // console, callouts on
-    { at:3, x: 20, y: 2, sc:0.96, rot: 2, tilt:-12, call:0, op:1,   atm:0.90 }, // up close
-    { at:4, x: 22, y: 0, sc:0.90, rot:-3, tilt: 14, call:0, op:1,   atm:0.80 }, // specs
-    { at:5, x:-20, y: 2, sc:0.86, rot: 3, tilt:-14, call:0, op:1,   atm:0.85 }, // heritage
-    { at:6, x: 20, y: 0, sc:1.04, rot:-2, tilt:  8, call:0, op:1,   atm:1.00 }  // contact
+    { at:0, x: 20, y: 0, sc:1.00, spin:-25, call:0, op:1,   atm:1.00 }, // hero, panel left
+    { at:1, x: 30, y: 2, sc:0.80, spin:170, call:0, op:0.0, atm:0.70 }, // walk-around: carousel takes over
+    { at:2, x:-12, y: 0, sc:1.04, spin:360, call:1, op:1,   atm:0.55 }, // console: front faces you, callouts on
+    { at:3, x: 20, y: 2, sc:0.96, spin:450, call:0, op:1,   atm:0.90 }, // up close
+    { at:4, x: 22, y: 0, sc:0.90, spin:540, call:0, op:1,   atm:0.80 }, // specs
+    { at:5, x:-20, y: 2, sc:0.86, spin:630, call:0, op:1,   atm:0.85 }, // heritage
+    { at:6, x: 20, y: 0, sc:1.04, spin:695, call:0, op:1,   atm:1.00 }  // contact
   ];
-  const F = ["x","y","sc","rot","tilt","call","op","atm"];
+  const F = ["x","y","sc","spin","call","op","atm"];
   const now = {}, tgt = {};
   F.forEach(f => { now[f] = KEYS[0][f]; tgt[f] = KEYS[0][f]; });
   function sample(i) {
@@ -568,11 +589,11 @@ footer .fine{max-width:1280px;margin:28px auto 0;padding-top:18px;border-top:1px
     if (i >= KEYS[last].at) return KEYS[last];
     for (let k = 0; k < last; k++) if (i <= KEYS[k + 1].at) {
       const a = KEYS[k], b = KEYS[k + 1], t = (i - a.at) / (b.at - a.at), s = t * t * (3 - 2 * t), o = {};
-      F.forEach(f => { o[f] = a[f] + (b[f] - a[f]) * s; }); return o;
+      F.forEach(f => { o[f] = a[f] + (b[f] - a[f]) * (f === "spin" ? t : s); }); return o;
     }
     return KEYS[last];
   }
-  const wrap = $("#prodWrap"), calls = $("#callouts"), glow = $("#glow"), swirls = $("#swirls");
+  const wrap = $("#prodWrap"), spin = $("#spin"), shR = $("#shR"), shL = $("#shL"), calls = $("#callouts"), glow = $("#glow"), swirls = $("#swirls");
   let mx = 0, my = 0, tmx = 0, tmy = 0, narrow = false;
   if (!reduced) addEventListener("pointermove", e => {
     tmx = (e.clientX / innerWidth - 0.5) * 2; tmy = (e.clientY / innerHeight - 0.5) * 2; }, { passive: true });
@@ -606,6 +627,7 @@ footer .fine{max-width:1280px;margin:28px auto 0;padding-top:18px;border-top:1px
       v: 4 + Math.random() * 16, p: Math.random() * 6.28, a: 0.25 + Math.random() * 0.6 });
   }
   function resize() {
+    wrap.style.setProperty("--u", (wrap.offsetHeight / 1177) + "px");
     W = innerWidth; H = innerHeight; narrow = W < 900;
     dpr = Math.min(devicePixelRatio || 1, 2);
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
@@ -625,11 +647,15 @@ footer .fine{max-width:1280px;margin:28px auto 0;padding-top:18px;border-top:1px
     const bob = reduced ? 0 : Math.sin(t / 1000 * 0.62) * 0.5;
     const tx = (narrow ? 0 : now.x) + mx * 0.8, ty = now.y + bob + my * 0.6;
     const op = narrow ? Math.min(now.op, 0.35) : now.op;   // on phones the product sits behind the panels
-    wrap.style.transform = "perspective(1400px) translate3d(" + tx.toFixed(2) + "vw," + ty.toFixed(2) + "vh,0)" +
-      " rotateY(" + (now.tilt + mx * 2.2).toFixed(2) + "deg) rotate(" + now.rot.toFixed(2) + "deg)" +
-      " scale(" + (now.sc * (narrow ? 0.9 : 1)).toFixed(3) + ")";
+    wrap.style.transform = "translate3d(" + tx.toFixed(2) + "vw," + ty.toFixed(2) + "vh,0) scale(" + (now.sc * (narrow ? 0.9 : 1)).toFixed(3) + ")";
     wrap.style.opacity = op.toFixed(2);
-    calls.style.opacity = (narrow ? 0 : now.call).toFixed(2);
+    const ang = now.spin + mx * 6, rad = ang * Math.PI / 180;
+    spin.style.transform = "rotateX(" + (-my * 3).toFixed(2) + "deg) rotateY(" + ang.toFixed(2) + "deg)";
+    // simple lighting: a side panel darkens as it turns away from the viewer
+    shR.style.opacity = (0.45 - 0.35 * Math.max(0, -Math.sin(rad))).toFixed(2);
+    shL.style.opacity = (0.45 - 0.35 * Math.max(0,  Math.sin(rad))).toFixed(2);
+    const facing = Math.pow(Math.max(0, Math.cos(rad)), 10);   // callouts only line up when the front faces you
+    calls.style.opacity = (narrow ? 0 : now.call * facing).toFixed(2);
     glow.style.opacity = (0.55 + 0.45 * now.atm).toFixed(2);
     swirls.style.opacity = (0.30 + 0.55 * now.atm).toFixed(2);
     ctx.clearRect(0, 0, W, H);
