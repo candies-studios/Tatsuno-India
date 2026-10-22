@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tatsuno India — Sunny NEX-G</title>
+<meta name="description" content="Tatsuno India Sunny NEX-G multi-product fuel dispenser. Engineered in Japan since 1911, built in Taloja, Maharashtra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121417; --ink-2:#3a3f46; --mute:#6b7280; --line:#dcdfe3;
+  --paper:#f5f5f5; --white:#ffffff; --red:#d32f2f; --orange:#f15a24; --hdr:84px; --stop:#f2c200;
+  --petrol:#1f5fd1; --diesel:#14a35a; --premium:#f2c200;
+  --gutter:clamp(16px,4vw,56px); --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.mono{font-family:"DM Sans",sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- header (matches tatsuno.co.in) ---------- */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:50;background:#fff;transition:transform .35s ease,box-shadow .3s}
+.site-header.solid{transform:translateY(-44px);box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.topbar{background:#f5f5f5;border-top:2px solid #d9d9d9;height:44px}
+.topbar .wrap{display:flex;justify-content:flex-end;align-items:center;height:100%;gap:0}
+.topbar a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#1d1d1d;font-size:1rem;font-weight:400;padding:0 20px}
+.topbar a:hover{color:var(--red)}
+.topbar a+a{border-left:1px solid #cfcfcf}
+.topbar svg{width:22px;height:22px;flex:none}
+.mainbar{height:var(--hdr);border-bottom:1px solid #e6e1d8}
+.mainbar .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:20px;max-width:1760px;padding:0 clamp(16px,2.6vw,48px)}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#1d1d1d;font-family:Arial,"Helvetica Neue",sans-serif;font-weight:700;font-size:1.32rem;letter-spacing:-.02em;white-space:nowrap}
+.brand svg{width:30px;height:36px;flex:none}
+.menu{display:flex;align-items:center;gap:clamp(16px,1.9vw,40px);list-style:none}
+.menu a{text-decoration:none;color:#1d1d1d;font-size:clamp(1rem,1.1vw,1.15rem);font-weight:500;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:color .2s}
+.menu a:hover,.menu a.active{color:var(--orange)}
+.menu .caret{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:8px solid var(--red)}
+.contact-btn{background:var(--red);color:#fff;text-decoration:none;font-weight:600;font-size:1.08rem;letter-spacing:.01em;padding:0 clamp(24px,2.4vw,46px);height:64px;display:inline-flex;align-items:center;text-transform:uppercase;white-space:nowrap;flex:none;transition:background .2s}
+.contact-btn:hover{background:#b71c1c}
+.wordmark{text-decoration:none;text-align:center;line-height:1;color:var(--red)}
+.wordmark b{display:block;font-size:2.2rem;font-weight:900;letter-spacing:-.01em}
+.wordmark small{display:block;color:#1d1d1d;font-size:.68rem;font-weight:500;margin-top:6px;white-space:nowrap}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger i{display:block;height:2px;background:#1d1d1d;margin:6px 8px}
+.wordmark{flex:none}
+@media (max-width:1380px){.mainbar .wordmark{display:none}}
+@media (max-width:1180px){
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 18px;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+  .menu.open{display:flex}
+  .menu li{width:100%;border-bottom:1px solid #eee}
+  .menu a{padding:14px 0;width:100%}
+  .burger{display:block}
+  .mainbar{position:relative}
+  .contact-btn{margin-left:auto}
+}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:2px;transition:transform .2s,background .2s}
+.btn:hover{background:#b71c1c;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--red);z-index:60;width:0}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:var(--gutter);padding-top:150px;padding-bottom:40px;max-width:var(--max);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+.hero h1{font-size:clamp(2.8rem,7vw,6.2rem);line-height:.92;font-weight:900;letter-spacing:-.035em}
+.hero h1 span{color:var(--red)}
+.hero p.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--ink-2);max-width:34ch;margin:26px 0 34px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.fuelbar{display:flex;gap:6px;margin-bottom:26px}
+.fuelbar i{width:38px;height:6px;border-radius:3px}
+.hero-img{position:relative;height:min(84svh,820px);border-radius:4px;overflow:hidden;background:#ddd}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.loaded .hero-img img{transform:scale(1)}
+.hero-img .tag{position:absolute;left:16px;bottom:16px;background:#fff;padding:10px 14px;border-radius:2px}
+.scrollcue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--mute)}
+.scrollcue b{width:1px;height:36px;background:var(--mute);animation:cue 1.8s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--ink);color:#fff;overflow:hidden;padding:18px 0;white-space:nowrap}
+.marquee div{display:inline-block;animation:mq 38s linear infinite}
+.marquee span{margin:0 34px;font-weight:600;font-size:1.05rem}
+.marquee span::before{content:"■";color:var(--red);margin-right:34px;font-size:.6rem;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- section basics ---------- */
+section{position:relative}
+.sec{padding:clamp(80px,12vw,150px) 0}
+.kicker{color:var(--red);margin-bottom:16px;display:block}
+h2{font-size:clamp(2rem,4.6vw,3.8rem);line-height:1;letter-spacing:-.03em;font-weight:800;max-width:18ch}
+.sub{color:var(--ink-2);max-width:56ch;margin-top:20px;font-size:1.08rem}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- 360 walkaround (scroll-driven) ---------- */
+.walk{height:520vh;background:var(--white)}
+.walk-sticky{position:sticky;top:0;height:100svh;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:var(--gutter);max-width:var(--max);margin:0 auto;padding:calc(var(--hdr) + 10px) var(--gutter) 0}
+.stage{position:relative;height:min(80svh,780px);border-radius:4px;overflow:hidden;background:#e9e9ef}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity .55s ease}
+.stage img.on{opacity:1}
+.stage .angle{position:absolute;top:16px;left:16px;background:var(--ink);color:#fff;padding:7px 11px}
+.dial{position:absolute;right:16px;top:16px;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.dial svg{width:52px;height:52px}
+.views{list-style:none;margin-top:34px;border-top:1px solid var(--line)}
+.views li{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--mute);transition:color .3s}
+.views li b{display:block;color:inherit;font-size:1.08rem}
+.views li.on{color:var(--ink)}
+.views li.on .mono{color:var(--red)}
+.views li p{font-size:.94rem;margin-top:3px;max-height:0;overflow:hidden;transition:max-height .5s}
+.views li.on p{max-height:90px}
+
+/* ---------- console hotspots ---------- */
+.console{background:var(--paper)}
+.console-fig{position:relative;margin-top:56px;border-radius:4px;overflow:hidden}
+.hs{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;border:0;font:600 .85rem "DM Sans",sans-serif;cursor:pointer;box-shadow:0 0 0 0 rgba(215,38,30,.55);animation:pulse 2.2s infinite}
+.hs.act{background:var(--ink);animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 16px rgba(215,38,30,0)}100%{box-shadow:0 0 0 0 rgba(215,38,30,0)}}
+.hs-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:1px}
+.hs-list div{background:var(--white);padding:22px;cursor:pointer;transition:background .25s}
+.hs-list div.act{background:var(--ink);color:#fff}
+.hs-list div.act .mono{color:var(--stop)}
+.hs-list b{display:block;margin:6px 0 4px;font-size:1.05rem}
+.hs-list p{font-size:.92rem;opacity:.8}
+
+/* ---------- details ---------- */
+.details{background:var(--ink);color:#fff}
+.details h2{color:#fff}
+.det-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);align-items:center}
+.det-img{border-radius:3px;overflow:hidden;aspect-ratio:4/5}
+.det-img img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}
+.det-list{list-style:none;margin-top:40px;border-top:1px solid #2f343b}
+.det-list li{display:grid;grid-template-columns:48px 1fr;padding:20px 0;border-bottom:1px solid #2f343b}
+.det-list .mono{color:var(--stop)}
+.det-list b{font-size:1.2rem}
+.det-list p{color:#b9bec5;font-size:.96rem;margin-top:4px}
+/* ---------- specs ---------- */
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);align-items:start;margin-top:56px}
+.spec-table{border-top:2px solid var(--ink)}
+.spec-table div{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}
+.spec-table dt{color:var(--mute)}
+.spec-table dd{font-weight:600;text-align:right}
+.big-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.big-stats div{background:var(--white);padding:28px 24px}
+.big-stats strong{display:block;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:900;letter-spacing:-.03em;line-height:1}
+.big-stats span{color:var(--mute);font-size:.92rem}
+.plate{margin-top:24px;border-radius:3px;overflow:hidden}
+
+/* ---------- heritage ---------- */
+.heritage{background:var(--white)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:2px solid var(--ink)}
+.timeline div{padding:26px 22px 0 0;position:relative}
+.timeline div::before{content:"";position:absolute;top:-8px;left:0;width:14px;height:14px;background:var(--red);border-radius:50%}
+.timeline strong{font-size:clamp(2rem,3.4vw,3rem);font-weight:900;letter-spacing:-.03em;display:block}
+.timeline p{color:var(--ink-2);margin-top:8px;font-size:.98rem}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:56px;border:1px solid var(--line)}
+.svc div{background:var(--paper);padding:30px 24px 34px;transition:background .3s,color .3s}
+.svc div:hover{background:var(--ink);color:#fff}
+.svc div:hover p{color:#c4c8ce}
+.svc .num{color:var(--red)}
+.svc b{display:block;font-size:1.2rem;margin:40px 0 10px;line-height:1.2}
+.svc p{color:var(--ink-2);font-size:.95rem;transition:color .3s}
+
+/* ---------- cta ---------- */
+.cta{background:var(--red);color:#fff;overflow:hidden}
+.cta .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--gutter);align-items:center}
+.cta h2{color:#fff;max-width:14ch}
+.cta .btn{background:#fff;color:var(--red)}
+.cta .btn:hover{background:var(--ink);color:#fff}
+.cta .ph{height:440px;border-radius:3px;overflow:hidden}
+.cta .ph img{width:100%;height:100%;object-fit:cover}
+footer{background:var(--ink);color:#aeb3ba;padding:56px 0 40px;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--gutter)}
+footer b{color:#fff;display:block;margin-bottom:10px}
+footer .fine{grid-column:1/-1;border-top:1px solid #2b2f35;padding-top:22px;margin-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .contact-btn{display:none}
+  .brand{font-size:.95rem;gap:8px}
+  .brand svg{width:22px;height:27px}
+  .mainbar .wrap{gap:10px}
+  .mainbar .wordmark b{font-size:1.4rem}
+  .topbar a{font-size:.85rem;padding:0 12px}
+  .topbar svg{width:18px;height:18px}
+  .det-grid{grid-template-columns:1fr}
+  .det-img{aspect-ratio:4/3}
+  .hero,.walk-sticky,.specs-grid,.cta .wrap{grid-template-columns:1fr}
+  .hero{padding-top:150px;padding-bottom:60px;min-height:auto}
+  .hero-img{height:62svh}
+  .scrollcue{display:none}
+  .walk-sticky{grid-template-rows:auto 1fr;align-content:start;padding-top:80px;gap:16px}
+  .walk-sticky .copy h2{font-size:1.7rem}
+  .walk-sticky .copy .sub{display:none}
+  .views{margin-top:12px}
+  .views li{padding:8px 0}
+  .views li:not(.on){display:none}
+  .stage{height:58svh}
+  .hs-list{grid-template-columns:1fr 1fr}
+  .timeline{grid-template-columns:1fr 1fr;row-gap:36px}
+  .svc{grid-template-columns:1fr 1fr}
+  .cta .ph{height:300px}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  :root{--hdr:64px}
+  .mainbar .wordmark{display:none}
+  .topbar .wrap{justify-content:center}
+  .svc,.hs-list{grid-template-columns:1fr}
+  .big-stats{grid-template-columns:1fr 1fr}
+  .hs{width:28px;height:28px;font-size:.75rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="site-header" id="nav">
+  <div class="topbar">
+    <div class="wrap">
+      <a href="tel:+912261016900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.6 4.2 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L7.6 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/><path d="M14.5 2.5a8 8 0 0 1 7 7M14.5 6a4.5 4.5 0 0 1 3.5 3.5"/></svg>022 61016900</a>
+      <a href="mailto:info@tatsuno.co.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2" y="4.5" width="20" height="15"/><path d="M2 4.5l10 8 10-8M2 19.5l7.5-7M22 19.5l-7.5-7"/></svg>info@tatsuno.co.in</a>
+    </div>
+  </div>
+  <div class="mainbar">
+    <div class="wrap">
+      <a href="#top" class="brand"><svg viewBox="0 0 30 36" aria-hidden="true"><rect width="30" height="36" fill="#f15a24"/><path d="M15 4 L4 32 L13.2 32 L15 13 L16.8 32 L26 32 Z" fill="#fff"/></svg>TATSUNO INDIA PRIVATE LIMITED</a>
+      <ul class="menu">
+        <li><a href="#top" class="active">Home</a></li>
+        <li><a href="#heritage">About Us</a></li>
+        <li><a href="#walkaround">Products <span class="caret"></span></a></li>
+        <li><a href="#services">Services <span class="caret"></span></a></li>
+        <li><a href="https://www.tatsuno.co.in/">Blog</a></li>
+        <li><a href="https://www.tatsuno.co.in/">Careers</a></li>
+      </ul>
+      <a href="#contact" class="contact-btn">Contact Us</a>
+      <a href="#top" class="wordmark" aria-label="Tatsuno"><b>T&Lambda;TSUNO</b><small>In Innovation, In Reliable Services</small></a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" id="burger"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div>
+    <div class="fuelbar"><i style="background:var(--petrol)"></i><i style="background:var(--diesel)"></i><i style="background:var(--premium)"></i></div>
+    <span class="mono kicker">Sunny NEX-G Series · Multi-product dispenser</span>
+    <h1>Every litre.<br>Exactly <span>right.</span></h1>
+    <p class="lead">Six nozzles, three grades, two faces and one standard of accuracy. Japanese engineering, built in Maharashtra for India's fuel retail.</p>
+    <div class="ctas">
+      <a href="#walkaround" class="btn">Explore the dispenser →</a>
+      <a href="#specs" class="btn ghost">View specifications</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="images/hero-angle.jpg" alt="Tatsuno Sunny NEX-G fuel dispenser, three-quarter view showing blue, green and yellow nozzles" fetchpriority="high">
+    <div class="tag mono">Made in Taloja, India</div>
+  </div>
+  <div class="scrollcue mono">Scroll<b></b></div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Accuracy Class 0.5</span><span>40–45 LPM flow</span><span>Petrol &amp; Diesel</span><span>6 nozzles · 2 faces</span><span>Legal Metrology approved</span><span>Since 1911</span><span>CCOE approved</span>
+  <span>Accuracy Class 0.5</span><span>40–45 LPM flow</span><span>Petrol &amp; Diesel</span><span>6 nozzles · 2 faces</span><span>Legal Metrology approved</span><span>Since 1911</span><span>CCOE approved</span>
+</div></div>
+
+<!-- WALKAROUND -->
+<section class="walk" id="walkaround">
+  <div class="walk-sticky">
+    <div class="copy">
+      <span class="mono kicker">Walk around it</span>
+      <h2>One cabinet. Every side considered.</h2>
+      <p class="sub">Keep scrolling to circle the Sunny NEX-G. Each face carries its own console and three-nozzle bay, so two vehicles can fill at once.</p>
+      <ul class="views" id="views">
+        <li data-i="0"><span class="mono">01</span><div><b>Front-left</b><p>Louvred side panel keeps the hydraulics ventilated. Hoses hang from overhead swivels so they never touch the ground.</p></div></li>
+        <li data-i="1"><span class="mono">02</span><div><b>Front</b><p>A console at eye height and a colour-coded nozzle bay for petrol, diesel and premium.</p></div></li>
+        <li data-i="2"><span class="mono">03</span><div><b>Front-right</b><p>A slim footprint that fits standard islands. Lower service doors give quick access to the meters.</p></div></li>
+        <li data-i="3"><span class="mono">04</span><div><b>Left side</b><p>A clean profile with nozzles on both faces, so lanes on either side of the island get served.</p></div></li>
+        <li data-i="4"><span class="mono">05</span><div><b>Right side</b><p>Vented lower cabinet, mains entry and lockable service access, all kept clear of the forecourt.</p></div></li>
+        <li data-i="5"><span class="mono">06</span><div><b>Elevated three-quarter</b><p>Double-sided: the reverse face mirrors this one with its own console and three more nozzles, for six in total.</p></div></li>
+      </ul>
+    </div>
+    <div class="stage" id="stage">
+      <img src="images/front-left.jpg" alt="Front-left three-quarter view">
+      <img src="images/front.jpg" alt="Front view">
+      <img src="images/front-right.jpg" alt="Front-right three-quarter view">
+      <img src="images/side-left.jpg" alt="Left side profile">
+      <img src="images/side-right.jpg" alt="Right side profile">
+      <img src="images/hero-angle.jpg" alt="Elevated three-quarter view">
+      <span class="angle mono" id="angleLbl">Front-left</span>
+      <div class="dial"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="22" fill="none" stroke="#dcdfe3" stroke-width="3"/><circle id="dialArc" cx="26" cy="26" r="22" fill="none" stroke="#d7261e" stroke-width="3" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 26 26)"/><rect x="21" y="18" width="10" height="16" fill="#121417"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSOLE -->
+<section class="console sec" id="console">
+  <div class="wrap">
+    <span class="mono kicker reveal">The console</span>
+    <h2 class="reveal">Everything the attendant needs. Nothing they don't.</h2>
+    <p class="sub reveal">Tap a marker to see what each part of the face does.</p>
+    <div class="console-fig reveal">
+      <img src="images/panel.jpg" alt="Dispenser console with emergency stop, main display, unit price displays, receipt printer and keypad">
+      <button class="hs" style="left:36.6%;top:35.3%" data-k="0" aria-label="Emergency stop">1</button>
+      <button class="hs" style="left:54.3%;top:40.9%" data-k="1" aria-label="Main display">2</button>
+      <button class="hs" style="left:36.6%;top:48.1%" data-k="2" aria-label="Unit price display">3</button>
+      <button class="hs" style="left:71.2%;top:37.3%" data-k="3" aria-label="Safety signage">4</button>
+      <button class="hs" style="left:54.6%;top:65%" data-k="4" aria-label="Receipt printer">5</button>
+      <button class="hs" style="left:69.3%;top:68.7%" data-k="5" aria-label="Keypad">6</button>
+    </div>
+    <div class="hs-list" id="hsList">
+      <div data-k="0"><span class="mono">01</span><b>Emergency stop</b><p>A high-visibility mushroom switch cuts power to the dispenser instantly.</p></div>
+      <div data-k="1"><span class="mono">02</span><b>Main display</b><p>A large readout shows amount (₹), volume (L), unit price and density, with "ensure zero before delivery" printed beside it.</p></div>
+      <div data-k="2"><span class="mono">03</span><b>Per-grade price</b><p>A separate ₹/L display for each grade, so customers always see what they pay.</p></div>
+      <div data-k="3"><span class="mono">04</span><b>Safety signage</b><p>No smoking, no mobile phones, no open flame, printed directly on the face.</p></div>
+      <div data-k="4"><span class="mono">05</span><b>Receipt printer</b><p>A built-in thermal printer with a status light issues a slip for every sale.</p></div>
+      <div data-k="5"><span class="mono">06</span><b>Preset keypad</b><p>Sealed metal keys with ₹ and litre presets plus F1–F4 function keys.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details sec" id="details">
+  <div class="wrap det-grid">
+    <div class="det-img reveal"><img src="images/nozzles-closeup.jpg" alt="Blue, green and yellow Tatsuno nozzles" loading="lazy"></div>
+    <div>
+      <span class="mono kicker reveal">Up close</span>
+      <h2 class="reveal">Details that last on a busy forecourt.</h2>
+      <ol class="det-list">
+        <li class="reveal"><span class="mono">01</span><div><b>Colour-coded grades</b><p>Blue, green and yellow nozzles make each grade clear at a glance and help prevent misfuelling.</p></div></li>
+        <li class="reveal"><span class="mono">02</span><div><b>Ergonomic nozzles</b><p>Moulded, embossed boots that sit comfortably in the hand through a long shift.</p></div></li>
+        <li class="reveal"><span class="mono">03</span><div><b>Overhead swivels</b><p>Hoses drop from above and rotate freely, which cuts kinking and wear.</p></div></li>
+        <li class="reveal"><span class="mono">04</span><div><b>Secure holsters</b><p>Deep holsters seat each nozzle firmly, with a drip tray below.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="sec" id="specs">
+  <div class="wrap">
+    <span class="mono kicker reveal">Specifications</span>
+    <h2 class="reveal">Certified numbers, straight from the nameplate.</h2>
+    <div class="specs-grid">
+      <dl class="spec-table reveal">
+        <div><dt>Series</dt><dd>Sunny NEX-G</dd></div>
+        <div><dt>Model</dt><dd>SSB366210BCA</dd></div>
+        <div><dt>Products</dt><dd>Petrol &amp; Diesel</dd></div>
+        <div><dt>Nozzles</dt><dd>6 (3 per face)</dd></div>
+        <div><dt>Flow range</dt><dd>40–45 LPM (SD)</dd></div>
+        <div><dt>Accuracy class</dt><dd>0.5</dd></div>
+        <div><dt>Minimum measured quantity</dt><dd>2 litres</dd></div>
+        <div><dt>Ambient temperature</dt><dd>−10 °C to +55 °C</dd></div>
+        <div><dt>Environmental class</dt><dd>M2 / E1 / H3</dd></div>
+        <div><dt>Legal Metrology model approval</dt><dd>IND/09/24/371</dd></div>
+        <div><dt>Manufactured at</dt><dd>MIDC Taloja, Maharashtra</dd></div>
+      </dl>
+      <div class="reveal">
+        <div class="big-stats">
+          <div><strong data-count="0.5" data-dec="1">0</strong><span>Accuracy class</span></div>
+          <div><strong data-count="45">0</strong><span>Litres per minute, max</span></div>
+          <div><strong data-count="6">0</strong><span>Nozzles per dispenser</span></div>
+          <div><strong data-count="55" data-suf="°C">0</strong><span>Max ambient rating</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage sec" id="heritage">
+  <div class="wrap">
+    <span class="mono kicker reveal">Heritage</span>
+    <h2 class="reveal">More than a century of putting fuel in tanks.</h2>
+    <p class="sub reveal">Tatsuno India is a subsidiary of Tatsuno Corporation, Tokyo, a global manufacturer of equipment for petroleum retail.</p>
+    <div class="timeline">
+      <div class="reveal"><strong>1911</strong><p>Tatsuno Corporation is founded in Tokyo.</p></div>
+      <div class="reveal"><strong>1919</strong><p>It builds Japan's first petrol dispensing pump.</p></div>
+      <div class="reveal"><strong>2012</strong><p>The Indian manufacturing plant is commissioned, Tatsuno's largest investment outside Japan.</p></div>
+      <div class="reveal"><strong>Today</strong><p>Sunny NEX-G dispensers built in Taloja for India's oil marketing companies.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <span class="mono kicker reveal">After-sales</span>
+    <h2 class="reveal">The dispenser is the start of the relationship.</h2>
+    <p class="sub reveal">Tatsuno treats after-sales service as a critical part of its business, with service quality to match the equipment.</p>
+    <div class="svc reveal">
+      <div><span class="mono num">01</span><b>Installation, commissioning &amp; maintenance</b><p>From delivery to first sale, followed by scheduled care.</p></div>
+      <div><span class="mono num">02</span><b>HDPE pipe installation</b><p>Flexible pipeline work done with non-sparking tools and advanced welding machines.</p></div>
+      <div><span class="mono num">03</span><b>Facilities maintenance</b><p>One-stop upkeep for the outlet: generators, electricals, plumbing, air towers, civil works and signage.</p></div>
+      <div><span class="mono num">04</span><b>Underground tank cleaning</b><p>Removes contaminated fuel before it can damage dispensers and submersible pumps.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta sec" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="mono" style="opacity:.8;display:block;margin-bottom:16px">Talk to Tatsuno India</span>
+      <h2>Planning a new outlet or an upgrade?</h2>
+      <p class="sub" style="color:#ffe1df">Tell us about your site and we'll recommend the right dispenser configuration and service plan.</p>
+      <div style="margin-top:32px"><div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="mailto:info@tatsuno.co.in">Email info@tatsuno.co.in →</a><a class="btn" href="tel:+912261016900" style="background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #fff">Call 022 61016900</a></div></div>
+    </div>
+    <div class="ph reveal"><img src="images/front.jpg" alt="Sunny NEX-G front view" loading="lazy" style="object-position:50% 45%"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="wordmark" style="text-align:left;display:inline-block"><b>T&Lambda;TSUNO</b><small style="color:#aeb3ba">In Innovation, In Reliable Services</small></span><p style="margin-top:16px;max-width:36ch">Tatsuno India Private Limited<br>B-31 &amp; B-32, MIDC Industrial Area, Taloja,<br>District Raigad 410208, Maharashtra, India<br><br><a href="tel:+912261016900" style="color:#fff;text-decoration:none">022 61016900</a><br><a href="mailto:info@tatsuno.co.in" style="color:#fff;text-decoration:none">info@tatsuno.co.in</a></p></div>
+    <div><b>Products</b>Fuel dispensers<br>Sunny NEX-G series<br>Forecourt equipment</div>
+    <div><b>Services</b>Installation &amp; AMC<br>HDPE pipelines<br>Tank cleaning</div>
+    <div class="fine"><span>© Tatsuno India Private Limited</span><span class="mono">Partners: Nupi Industrie Italiane · Bever Innovations</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  addEventListener('load', () => document.body.classList.add('loaded'));
+  setTimeout(() => document.body.classList.add('loaded'), 300);
+
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  // count-up stats
+  const co = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; co.unobserve(e.target);
+    const el = e.target, to = +el.dataset.count, dec = +(el.dataset.dec || 0), suf = el.dataset.suf || '';
+    if (reduce) { el.textContent = to.toFixed(dec) + suf; return; }
+    const t0 = performance.now();
+    const tick = t => { const p = Math.min(1, (t - t0) / 1400), v = to * (1 - Math.pow(1 - p, 3));
+      el.textContent = v.toFixed(dec) + suf; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), { threshold: .6 });
+  $$('[data-count]').forEach(el => co.observe(el));
+
+  // walkaround + horizontal scroller + progress
+  const walk = $('#walkaround'), imgs = $$('#stage img'), views = $$('#views li'), lbl = $('#angleLbl'), arc = $('#dialArc');
+  const names = ['Front-left', 'Front', 'Front-right', 'Left side', 'Right side', 'Elevated 3/4'];
+  const nav = $('#nav'), bar = $('#progress');
+  let cur = -1;
+  const prog = el => { const r = el.getBoundingClientRect(); return Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))); };
+  const setView = i => { if (i === cur) return; cur = i;
+    imgs.forEach((im, k) => im.classList.toggle('on', k === i));
+    views.forEach((v, k) => v.classList.toggle('on', k === i));
+    lbl.textContent = names[i]; };
+  const onScroll = () => {
+    const p = prog(walk);
+    setView(Math.min(imgs.length - 1, Math.floor(p * imgs.length)));
+    arc.style.strokeDashoffset = 138.2 * (1 - p);
+    nav.classList.toggle('solid', scrollY > 40);
+    bar.style.width = (scrollY / (document.documentElement.scrollHeight - innerHeight) * 100) + '%';
+  };
+  addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
+  views.forEach(v => v.addEventListener('click', () => {
+    const i = +v.dataset.i, top = walk.offsetTop + (walk.offsetHeight - innerHeight) * ((i + .5) / imgs.length);
+    scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  // mobile menu
+  const burger = $('#burger'), menu = $('.menu');
+  burger.addEventListener('click', () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+  $$('.menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // console hotspots
+  const btns = $$('.hs'), items = $$('#hsList div');
+  const pick = k => { btns.forEach(b => b.classList.toggle('act', +b.dataset.k === k)); items.forEach(d => d.classList.toggle('act', +d.dataset.k === k)); };
+  [...btns, ...items].forEach(el => el.addEventListener('click', () => pick(+el.dataset.k)));
+  pick(0);
+})();
+</script>
+</body>
+</html>
